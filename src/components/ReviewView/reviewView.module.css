@@ -1,0 +1,18 @@
+.container,
+.noReview {
+  padding: 15px;
+  color: #2a363b;
+  background-color: rgba(192, 192, 192, 0.75);
+}
+
+.item {
+  margin-bottom: 15px;
+}
+
+.author {
+  font-weight: 700;
+}
+
+.noReview {
+  font-size: 24px;
+}

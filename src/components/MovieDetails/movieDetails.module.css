@@ -2,16 +2,12 @@
   display: flex;
   padding-top: 15px;
   padding-bottom: 30px;
-
-  border-bottom: 2px solid;
 }
 
 .detailsContainer {
   margin-left: 30px;
-}
 
-.Btn {
-  margin-top: 15px;
+  color: silver;
 }
 
 .detailsImg {
@@ -21,4 +17,50 @@
     0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
   object-fit: cover;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.infoContainer {
+  /* margin-bottom: 5px; */
+  background-color: silver;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+}
+
+.link {
+  display: inline-block;
+  padding: 12px;
+
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  color: #2a363b;
+}
+
+a:hover {
+  text-decoration: underline;
+  transform: scale(1.1);
+}
+
+.activeLink {
+  font-weight: bold;
+}
+
+.Btn {
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border: 0.1em solid silver;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: silver;
+  background-color: #000000;
+  text-align: center;
+  transition: all 0.2s;
+}
+.Btn:hover {
+  color: #000000;
+  background-color: silver;
+  border: 0.1em solid #000000;
 }

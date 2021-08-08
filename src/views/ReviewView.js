@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import * as SearchApi from '../services/SearchApi';
+import styles from '../components/ReviewView/reviewView.module.css';
 
 export default function ReviewView() {
     const [reviews, setReviews] = useState([]);
@@ -17,17 +18,17 @@ export default function ReviewView() {
         <>
             {reviews &&
             reviews.length > 0 &&
-            <><ul>
+            <><ul className={styles.container}>
                 {reviews.map(review =>
-                    <li key={review.id}>
-                        <p>{`Author: ${review.author}`}</p>
-                        <p>{`Review: ${review.content}`}</p>                            
+                    <li key={review.id} className={styles.item}>
+                        <p className={styles.author}>{`Author: ${review.author}`}</p>
+                        <p>{review.content}</p>                            
                     </li>)}
             </ul></>
             }
 
             {reviews.length === 0 &&
-            <p>No reviews yet</p>}
+            <p className={styles.noReview}>No reviews yet... :/</p>}
         </>
     );
 }

@@ -13,13 +13,9 @@ body {
   font: 75% georgia, sans-serif;
   line-height: 1.88889;
 
-  /* color: white; */
-  background-color: rgba(40, 100, 130, 0.6);
-
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-image: url(./img/notebookpaper.jpg); */
-  /* background-size: cover; */
+  background-image: url(../../img/background.webp);
 }
 
 .container {
@@ -29,8 +25,8 @@ body {
   margin-right: auto;
   padding-left: 30px;
   padding-right: 30px;
-
-  background-color: rgba(40, 100, 130, 0.5);
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 img {
