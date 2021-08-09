@@ -24,6 +24,9 @@ export default function MovieDetailsView() {
   const [userScore, setUserScore] = useState(0);
   const [genres, setGenres] = useState('');
 
+  console.log(location)
+  console.log(history)
+
   const onGoBack = () => {
     history.push(location?.state?.from ?? '/movies');
   };
@@ -43,17 +46,9 @@ export default function MovieDetailsView() {
         type="button"
         onClick={onGoBack}
         className={styles.Btn}
-        data-label="Click Me"
       >
         Go Back
       </button>
-
-      {/* <Link to={{
-                pathname: location?.state?.from?.location ?? '/movies',
-                state: {
-                    searchVal: location.state.option,
-                }
-            }}>Go yankees back</Link> */}
 
       {movie && (
         <>

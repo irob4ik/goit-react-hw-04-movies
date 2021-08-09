@@ -29,11 +29,9 @@ export function fethMovieBySearch(search) {
 }
 
 export function fetchCastById(movieId) {
-  console.log("fetching cast")
   return SearchApi(`${BASE_URL}/movie/${movieId}/credits?api_key=${API_KEY}`);
 }
 
 export function fetchReviewById(movieId) {
-  console.log("fetching cast")
   return SearchApi(`${BASE_URL}/movie/${movieId}/reviews?api_key=${API_KEY}`);
 }

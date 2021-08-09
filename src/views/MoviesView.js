@@ -3,7 +3,7 @@ import Loader from '../components/Loader/Loader';
 import * as SearchApi from '../services/SearchApi';
 import MoviesGallery from '../components/MoviesGallery/MoviesGallery';
 import Searchbar from '../components/Searchbar/Searchbar';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useHistory } from 'react-router-dom';
 
 export default function MoviesView() {
     const [search, setSearch] = useState(null);
@@ -11,26 +11,36 @@ export default function MoviesView() {
     const [loading, setLoading] = useState(false);
     const [loaderStatus, setLoaderStatus] = useState('init');
     const [error, setError] = useState(null);
-
+    const history = useHistory();
     const location = useLocation();
+    console.log(location)
+    console.log(location.search.slice(7))
 
     const handleInputSubmit = (input) => {
+        history.push({
+            pathname: location.pathname,
+            search: `query=${input}`,
+        })
         setSearch(input);
         setLoaderStatus('init');
     }
 
     useEffect(() => {
-        if (!location?.state?.searchVal && !search) {
+        if (location.search === '') {
             return;
         }
 
-        if (!search) {
-            setSearch(location?.state?.searchVal);
-        }
+        // if (!location?.state?.searchVal && !search) {
+        //     return;
+        // }
+
+        // if (!search) {
+        //     setSearch(location?.state?.searchVal);
+        // }
         
         setLoading(true);
 
-        SearchApi.fethMovieBySearch(search)
+        SearchApi.fethMovieBySearch(location.search.slice(7))
             .then(data => {            
             if (data.results.length === 0) {
                 setMovies(data.results);
